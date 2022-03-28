@@ -1,18 +1,46 @@
-def square(a):
-    return a*a
-def perimeter(l,w):
-    return 2(l+w)
-def area(l,w):
-    return l*w
+def area_square(side):
+    Area = side * side
+    return Area
 
-if __name__ =="__main__":
-    a=int(input("enter a value"))
-    l=int(input("enter l value"))
-    w=int(input("enter w value"))
 
-    s1=square(a)
-    print(s1)
-    s2=perimeter(l,w)
-    print(s2)
-    s3=area(l,w)
-    print(s3)
+def perimeter_rect(l, w):
+    perimeter = 2 * (l + w)
+    return perimeter
+
+
+def area_rect(l, b):
+
+    Area = l * b
+    return Area
+
+if __name__=="__main__":
+    while True:
+        print("1. Calculate area of Square ")
+        print("2. Calculate perimeter of rectangle ")
+        print("3. Calculate area of rectangle ")
+        print("4. EXIT")
+
+        choice = int(input("Enter your choice from the above Menu :"))
+
+        if choice == 1:
+            side = int(input("Enter the number for finding Area of square :"))
+            squarearea = area_square(side)
+            print(squarearea)
+
+        elif choice == 2:
+            l = int(input("Enter the Length for finding perimeter of rectangle :"))
+            w = int(input("Enter the width for finding perimeter of rectangle :"))
+            perimeterrect = perimeter_rect(l, w)
+            print(perimeterrect)
+
+        elif choice == 3:
+            l = int(input("Enter the length for finding area of rectangle :"))
+            b = int(input("Enter the breath for finding area of rectangle :"))
+            arearect = area_rect(l, b)
+            print(arearect)
+
+        elif choice == 4:
+            break
+
+        else:
+            print("invalid")
